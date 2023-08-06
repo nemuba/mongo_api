@@ -24,11 +24,35 @@ The gem is a simple wrapper around the MongoDb Atlas Data API to make it easier 
 require 'mongo_api'
 
 class Users < MongoApi::Base
-    base_url ENV['MONGO_ATLAS_API_URL']
+  base_url ENV['MONGO_ATLAS_API_URL']
   default_headers 'Content-Type': 'application/json',
                   'api-key': ENV['MONGO_ATLAS_API_KEY'],
                   'Access-Control-Request-Headers': '*'
 end
+
+# Get all users
+users = Users.all(limit: 10, sort: { _id: 1 }) # => [ { "_id" => "5f9a9a9a9a9a9a9a9a9a9a9a", "name" => "John Doe" }, ... ]
+
+# Insert a new user
+user = Users.insert({ name: 'Jane Doe' }) # => {"insertedId"=>"64cf1065f549de65c4908375"}
+
+# Find a user by name
+user = Users.find(filter: { name: 'Jane Doe' }) # => [ { "_id" => "5f9a9a9a9a9a9a9a9a9a9a9a", "name" => "Jane Doe" } ]
+
+# Update a user
+user = Users.update(where: { name: 'Jane Doe' }, set: { name: 'Jane Smith' }) # => {"matchedCount"=>1, "modifiedCount"=>1}
+
+# Update All users
+user = Users.update_all(where: { name: 'Jane Smith' }, set: { name: 'Jane Doe' }) # => {"matchedCount"=>1, "modifiedCount"=>1}
+
+# Destroy a user
+user = Users.destroy(where: { name: 'Jane Smith' }) # => {"deletedCount"=>1}
+
+# Destroy All users
+user = Userss.destroy_all(where: { name: 'Jane Smith' }) # => {"deletedCount"=>1}    
+
+# Count users
+user = Users.count # => 10
 ```
 
 ## Development
