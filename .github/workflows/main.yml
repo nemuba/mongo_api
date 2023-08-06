@@ -17,10 +17,10 @@ jobs:
           - '3.2.0'
     env:
       MONGO_ATLAS_API_URL: ${{ secrets.MONGO_ATLAS_API_URL }}
-      MONGO_ATLAS_API_KEY: ${{ secrets.MONGO_ATLAS_API_KEY }
-      MONGO_DATABASE_NAME: ${{ secrets.MONGO_DATABASE_NAME }
-      MONGO_COLLECTION_NAME: ${{ secrets.MONGO_COLLECTION_NAME }
-      MONGO_DATASOURCE_NAME: ${{ secrets.MONGO_DATASOURCE_NAME }
+      MONGO_ATLAS_API_KEY: ${{ secrets.MONGO_ATLAS_API_KEY }}
+      MONGO_DATABASE_NAME: ${{ secrets.MONGO_DATABASE_NAME }}
+      MONGO_COLLECTION_NAME: ${{ secrets.MONGO_COLLECTION_NAME }}
+      MONGO_DATASOURCE_NAME: ${{ secrets.MONGO_DATASOURCE_NAME }}
 
     steps:
     - uses: actions/checkout@v3
