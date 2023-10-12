@@ -72,7 +72,7 @@ user = Users.destroy(where: { name: 'Jane Smith' }) # => {"deletedCount"=>1}
 
 # Destroy All users
 # @param [Hash] where: The query predicate.
-user = Userss.destroy_all(where: { name: 'Jane Smith' }) # => {"deletedCount"=>1}    
+user = Users.destroy_all(where: { name: 'Jane Smith' }) # => {"deletedCount"=>1}    
 
 # Count users
 user = Users.count # => 10
@@ -87,7 +87,7 @@ Users.delete_one(filter: {})
 Users.delete_many(filter: {})
 Users.replace_one(filter: {}, replacement: {}, upsert: false)
 Users.aggregate(pipeline: [])
-
+Users.count
 ```
 
 ## Development
