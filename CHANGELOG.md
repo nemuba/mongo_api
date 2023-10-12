@@ -1,5 +1,11 @@
 # [Release]
 
+## [0.1.1] - 2023-10-11
+
+- Add method `#collection_name` to `MongoApi::Base` class:
+  - `#collection_name`: returns the name of the collection
+  - Fix error in management of collections in `MongoApi::Base` class
+
 ## [0.1.0] - 2023-08-05
 
 - Initial release

@@ -24,7 +24,6 @@ Set environment variables for the MongoDb Atlas API URL, API Key, Database Name,
 MONGO_ATLAS_API_URL=https://cloud.mongodb.com/api/atlas/v1.0
 MONGO_ATLAS_API_KEY=1234567890
 MONGO_DATABASE_NAME=sample_mflix
-MONGO_COLLECTION_NAME=users
 MONGO_DATASOURCE_NAME=sample_mflix
 ```
 
