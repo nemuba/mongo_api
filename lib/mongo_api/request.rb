@@ -175,6 +175,10 @@ module MongoApi
     class << self
       private
 
+      # This method is used to parse the response
+      #
+      # @param [Block] block
+      # @return [Hash|Array] the documents array or the response
       def parse_response(&block)
         data = block.call
 

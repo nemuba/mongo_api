@@ -90,11 +90,18 @@ module MongoApi
       count
     end
 
+    # This method sets the collection name
+    #
+    # @return [String] the collection name
+    def self.collection_name
+      ancestors.first.to_s.gsub("::", "_").downcase
+    end
+
     class << self
       def body
         {
           database: ENV["MONGO_DATABASE_NAME"],
-          collection: ENV["MONGO_COLLECTION_NAME"],
+          collection: collection_name,
           dataSource: ENV["MONGO_DATASOURCE_NAME"]
         }
       end
